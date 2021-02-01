@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!doctype html>
+        <html lang="en">
+        <head>
+            <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+            <title>Add New Client</title>
+    </head>
+    <body>
+        <div class="container">
+            <h3>Add New Transfer</h3>
+            <hr>
+            <p class="h4 mb-4">Save Transfer</p>
+
+
+            <form action="#" th:action="@{/v1/clients/create}"
+                  th:object="${object}" method="POST">
+
+                <input type="hidden" th:field="*{id}"/>
+
+                <input type="text" th:field="*{clientName}"
+                class="form-control mb-4 col-4" placeholder="Client's Name">
+
+
+                <button type="submit" class="btn btn-info col-2">Save</button>
+
+            </form>
+           <hr>
+
+            <a th:href="@{/v1/clients}">Back To Transfer List</a>
+
+        </div>
+    </body>
